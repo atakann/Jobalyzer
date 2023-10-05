@@ -99,7 +99,26 @@ router.get('/jobs-per-company', async (req, res) => {
 });
 
 
-// Get number of jobs per location (state)
+/**
+ * @swagger
+ * /stats/jobs-per-state:
+ *  get:
+ *    summary: Retrieve number of jobs per state
+ *    tags: [Stats]
+ *    responses:
+ *      200:
+ *        description: List of job counts per state
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                $ref: '#/components/schemas/Stats'
+ *      404:
+ *        description: No statistics found for jobs per state
+ *      500:
+ *        description: Server error
+ */
 router.get('/jobs-per-state', async (req, res) => {
     try {
         const stats = await Job.aggregate([
@@ -114,6 +133,26 @@ router.get('/jobs-per-state', async (req, res) => {
     }
 });
 
+/**
+ * @swagger
+ * /stats/jobs-per-city:
+ *  get:
+ *    summary: Retrieve number of jobs per city
+ *    tags: [Stats]
+ *    responses:
+ *      200:
+ *        description: List of job counts per city
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                $ref: '#/components/schemas/Stats'
+ *      404:
+ *        description: No statistics found for jobs per city
+ *      500:
+ *        description: Server error
+ */
 router.get('/jobs-per-city', async (req, res) => {
     try {
         const stats = await Job.aggregate([
@@ -128,6 +167,26 @@ router.get('/jobs-per-city', async (req, res) => {
     }
 });
 
+/**
+ * @swagger
+ * /stats/jobs-per-skill:
+ *  get:
+ *    summary: Retrieve number of jobs per skill
+ *    tags: [Stats]
+ *    responses:
+ *      200:
+ *        description: List of job counts per skill
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                $ref: '#/components/schemas/Stats'
+ *      404:
+ *        description: No statistics found for jobs per skill
+ *      500:
+ *        description: Server error
+ */
 router.get('/jobs-per-skill', async (req, res) => {
     try {
         const stats = await Job.aggregate([
@@ -143,6 +202,27 @@ router.get('/jobs-per-skill', async (req, res) => {
     }
 });
 
+
+/**
+ * @swagger
+ * /stats/jobs-per-softskill:
+ *  get:
+ *    summary: Retrieve number of jobs per soft skill
+ *    tags: [Stats]
+ *    responses:
+ *      200:
+ *        description: List of job counts per soft skill
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                $ref: '#/components/schemas/Stats'
+ *      404:
+ *        description: No statistics found for jobs per soft skill
+ *      500:
+ *        description: Server error
+ */
 router.get('/jobs-per-softskill', async (req, res) => {
     try {
         const stats = await Job.aggregate([
@@ -158,6 +238,26 @@ router.get('/jobs-per-softskill', async (req, res) => {
     }
 });
 
+/**
+ * @swagger
+ * /stats/jobs-per-qualification:
+ *  get:
+ *    summary: Retrieve number of jobs per qualification
+ *    tags: [Stats]
+ *    responses:
+ *      200:
+ *        description: List of job counts per qualification
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                $ref: '#/components/schemas/Stats'
+ *      404:
+ *        description: No statistics found for jobs per qualification
+ *      500:
+ *        description: Server error
+ */
 router.get('/jobs-per-qualification', async (req, res) => {
     try {
         const stats = await Job.aggregate([
@@ -173,6 +273,26 @@ router.get('/jobs-per-qualification', async (req, res) => {
     }
 });
 
+/**
+ * @swagger
+ * /stats/jobs-per-zipcode:
+ *  get:
+ *    summary: Retrieve number of jobs per ZIP code
+ *    tags: [Stats]
+ *    responses:
+ *      200:
+ *        description: List of job counts per ZIP code
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                $ref: '#/components/schemas/Stats'
+ *      404:
+ *        description: No statistics found for jobs per ZIP code
+ *      500:
+ *        description: Server error
+ */
 router.get('/jobs-per-zipcode', async (req, res) => {
     try {
         const stats = await Job.aggregate([
@@ -187,6 +307,26 @@ router.get('/jobs-per-zipcode', async (req, res) => {
     }
 });
 
+/**
+ * @swagger
+ * /stats/jobs-per-salarytype:
+ *  get:
+ *    summary: Retrieve number of jobs per salary type
+ *    tags: [Stats]
+ *    responses:
+ *      200:
+ *        description: List of job counts per salary type
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                $ref: '#/components/schemas/Stats'
+ *      404:
+ *        description: No statistics found for jobs per salary type
+ *      500:
+ *        description: Server error
+ */
 router.get('/jobs-per-salarytype', async (req, res) => {
     try {
         const stats = await Job.aggregate([
